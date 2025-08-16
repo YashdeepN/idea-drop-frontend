@@ -1,9 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/ideas/")({
-  component: RouteComponent,
+  head: () => ({
+    meta: [{ title: "IdeaHub - Browse Ideas" }],
+  }),
+  component: IdeasPage,
 });
 
-function RouteComponent() {
+function IdeasPage() {
   return <div>Hello "/ideas"!</div>;
 }
