@@ -2,7 +2,7 @@ import { fetchIdeas } from "@/api/ideas";
 import IdeaCard from "@/components/IdeaCard";
 import type { Idea } from "@/types";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 
 const ideasQueryOptions = () =>
   queryOptions({

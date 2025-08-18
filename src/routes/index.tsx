@@ -19,7 +19,11 @@ export const Route = createFileRoute("/")({
 });
 
 function HomePage() {
-  const { data: latestIdeas } = useSuspenseQuery(latestIdeasQueryOptions());
+  const { data } = useSuspenseQuery(latestIdeasQueryOptions());
+
+  const latestIdeas = [...data].sort(
+    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+  );
 
   return (
     <>
