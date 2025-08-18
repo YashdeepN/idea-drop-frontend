@@ -1,4 +1,5 @@
 import { fetchIdeas } from "@/api/ideas";
+import IdeaCard from "@/components/IdeaCard";
 import { queryOptions, useSuspenseQuery } from "@tanstack/react-query";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Lightbulb } from "lucide-react";
@@ -38,25 +39,16 @@ function HomePage() {
           <h2 className="text-2xl font-semibold mb-4 text-gray-800">
             Latest Ideas
           </h2>
-          <ul className="space-y-6">
+          <div className="space-y-6">
             {latestIdeas.slice(0, 3).map((i) => (
-              <li
+              <IdeaCard
                 key={i.id}
-                className="border border-gray-300 rounded-lg shadow p-4 bg-white"
-              >
-                <h3 className="text-lg font-bold text-gray-900">{i.title}</h3>
-                <p className="text-gray-600 mb-2">{i.summary}</p>
-                <Link
-                  to="/ideas/$ideaId"
-                  params={{ ideaId: i.id }}
-                  className="text-blue-600 hover:underline"
-                >
-                  {" "}
-                  Read more →{" "}
-                </Link>
-              </li>
+                idea={i}
+                button={false}
+                buttonContent="Read more →"
+              />
             ))}
-          </ul>
+          </div>
 
           <div className="mt-6">
             <Link
