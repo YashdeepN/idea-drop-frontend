@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import { TanstackDevtools } from "@tanstack/react-devtools";
 import type { QueryClient } from "@tanstack/react-query";
 import {
@@ -24,9 +25,14 @@ export const Route = createRootRouteWithContext<RouterContext>()({
       },
     ],
   }),
-  component: () => (
+  component: RootLayout,
+});
+
+function RootLayout() {
+  return (
     <>
       <HeadContent />
+      <Header />
       <Outlet />
       <TanstackDevtools
         config={{
@@ -40,5 +46,5 @@ export const Route = createRootRouteWithContext<RouterContext>()({
         ]}
       />
     </>
-  ),
-});
+  );
+}
