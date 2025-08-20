@@ -6,8 +6,8 @@ import { Lightbulb } from "lucide-react";
 
 const latestIdeasQueryOptions = () =>
   queryOptions({
-    queryKey: ["latestIdeas"],
-    queryFn: fetchIdeas,
+    queryKey: ["latestIdeas", { limit: 3 }],
+    queryFn: () => fetchIdeas(3),
   });
 
 export const Route = createFileRoute("/")({
@@ -44,7 +44,7 @@ function HomePage() {
             Latest Ideas
           </h2>
           <div className="space-y-6">
-            {latestIdeas.slice(0, 3).map((i) => (
+            {latestIdeas.map((i) => (
               <IdeaCard
                 key={i._id}
                 idea={i}
