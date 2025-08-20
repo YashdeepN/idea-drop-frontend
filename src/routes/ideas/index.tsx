@@ -33,7 +33,7 @@ function IdeasPage() {
         <h1 className="text-2xl font-bold mb-4">Ideas</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {ideas.map((idea: Idea) => (
-            <IdeaCard key={idea.id} idea={idea} buttonContent=" View Idea" />
+            <IdeaCard key={idea._id} idea={idea} buttonContent=" View Idea" />
           ))}
         </div>
       </div>

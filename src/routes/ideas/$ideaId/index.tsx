@@ -53,7 +53,7 @@ function IdeaDetailsPage() {
       {/* Edit Link */}
       <Link
         to="/ideas/$ideaId/edit"
-        params={{ ideaId: idea.id }}
+        params={{ ideaId: idea._id }}
         className="inline-block text-sm bg-yellow-500 hover:bg-yellow-600 text-white mt-4 mr-2 px-4 py-2 rounded transition"
       >
         Edit

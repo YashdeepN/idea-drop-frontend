@@ -46,7 +46,7 @@ function HomePage() {
           <div className="space-y-6">
             {latestIdeas.slice(0, 3).map((i) => (
               <IdeaCard
-                key={i.id}
+                key={i._id}
                 idea={i}
                 button={false}
                 buttonContent="Read more →"
