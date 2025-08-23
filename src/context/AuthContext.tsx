@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         setUser(user);
         setStoredAccessToken(newToken);
       } catch (err: any) {
-        console.log("Failed to refresh token: ", err);
+        console.error("Failed to refresh token: ", err);
       }
     };
 
